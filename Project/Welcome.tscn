@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://art/background.jpg" type="Texture" id=1]
+[ext_resource path="res://fonts/Montserrat-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://art/about.png" type="Texture" id=3]
+[ext_resource path="res://art/how to play.png" type="Texture" id=4]
+[ext_resource path="res://button.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=3]
+size = 61
+outline_size = 8
+outline_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_size = 7
+outline_color = Color( 0.470588, 0.392157, 0.360784, 1 )
+font_data = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect"]
+margin_right = 960.0
+margin_bottom = 720.0
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 5 )
+
+[node name="Play" type="Button" parent="."]
+margin_left = 353.0
+margin_top = 276.0
+margin_right = 619.0
+margin_bottom = 397.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "PLAY"
+flat = true
+
+[node name="About" type="Button" parent="."]
+margin_left = 821.0
+margin_top = 390.0
+margin_right = 926.0
+margin_bottom = 495.0
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+
+[node name="How to Play" type="Button" parent="."]
+margin_left = 51.0
+margin_top = 390.0
+margin_right = 143.0
+margin_bottom = 495.0
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 223.0
+margin_top = 123.0
+margin_right = 748.0
+margin_bottom = 185.0
+custom_fonts/font = SubResource( 4 )
+text = "Starving Cute Miong"
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="How to Play" to="." method="_on_How_to_Play_pressed"]

@@ -40,7 +40,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("mob"):
 			var mob = collision.collider
-			if Vector3.UP.dot(collision.normal) > 0.5:
+			if Vector3.UP.dot(collision.normal) > 0.1:
 				mob.squash()
 				velocity.y = bounce_impulse
 

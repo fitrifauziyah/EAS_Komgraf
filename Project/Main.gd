@@ -23,3 +23,7 @@ func _on_MobTimer_timeout():
 func _on_Player_hit():
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
+
+
+func _on_Back_pressed():
+	get_tree().change_scene("res://Welcome.tscn")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://art/background_dark.jpg" type="Texture" id=1]
+[ext_resource path="res://fonts/Montserrat-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://art/back.png" type="Texture" id=3]
+[ext_resource path="res://About.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 9
+outline_color = Color( 0.470588, 0.392157, 0.360784, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect"]
+margin_right = 960.0
+margin_bottom = 720.0
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -75.0
+margin_top = 88.0
+margin_right = 83.0
+margin_bottom = 150.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "About"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 103.0
+margin_top = 258.0
+margin_right = 872.0
+margin_bottom = 507.0
+custom_colors/font_color = Color( 0.196078, 0.180392, 0.172549, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Game ini dibuat untuk memenuhi tugas akhir Komputer Grafik yang dibuat oleh KoTA 207 dengan anggota:
+
+Fitri Fauziyah - 201511040
+Nur Lia - 201511055
+Restu Triwahyuny - 201511057"
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+margin_right = 103.0
+margin_bottom = 115.0
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
